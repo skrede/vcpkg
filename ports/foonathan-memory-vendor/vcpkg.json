@@ -1,6 +1,6 @@
 {
   "name": "foonathan-memory-vendor",
-  "version-date": "1.3.0",
+  "version": "1.3.0",
   "description": "Vendor package for foonathan/memory. This package will download, patch, build and install foonathan/memory for its use with Fast DDS.",
   "homepage": "https://github.com/eProsima/foonathan_memory_vendor",
   "dependencies": [

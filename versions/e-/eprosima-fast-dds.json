@@ -3,7 +3,8 @@
 		{
 			"version": "2.9.1",
 			"git-tree": "3a2162ba86f97c0590d81399ced96b0a1758bd57",
-			"port-version": 0
+			"port-version": 0,
+			"path": "$/ports/eprosima-fast-dds"
 		}
 	]
 }
