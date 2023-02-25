@@ -4,8 +4,6 @@
   "description": "eProsima library for RPC over DDS, TCP or REST",
   "homepage": "https://github.com/eProsima/RPC",
   "dependencies": [
-    "eprosima-fast-cdr",
-    "eprosima-fast-dds",
     {
       "name": "vcpkg-cmake",
       "host": true

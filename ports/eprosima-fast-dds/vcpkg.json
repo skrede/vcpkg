@@ -7,7 +7,7 @@
     "openssl",
     "tinyxml2",
     "foonathan-memory",
-    "eprosima-fast-cdr",
+    "fastcdr",
     {
       "name": "vcpkg-cmake",
       "host": true
