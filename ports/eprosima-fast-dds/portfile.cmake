@@ -1,4 +1,5 @@
 #based on https://github.com/microsoft/vcpkg/blob/master/ports/fastrtps/portfile.cmake
+
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
 	REPO eProsima/Fast-DDS
@@ -9,6 +10,8 @@ vcpkg_from_github(
 
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
+    OPTIONS
+        -DVCPKG_BUILD_TYPE=release
 )
 
 vcpkg_cmake_install()

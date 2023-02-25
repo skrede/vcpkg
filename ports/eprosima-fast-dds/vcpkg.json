@@ -4,6 +4,9 @@
   "description": "eprosima Fast DDS (formerly Fast RTPS) is a C++ implementation of the DDS (Data Distribution Service) standard of the OMG (Object Management Group).",
   "homepage": "https://github.com/eProsima/Fast-DDS",
   "dependencies": [
+    "openssl",
+    "tinyxml2",
+    "foonathan-memory",
     "eprosima-fast-cdr",
     {
       "name": "vcpkg-cmake",
