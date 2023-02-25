@@ -1,6 +1,6 @@
 {
   "name": "eprosima-fast-cdr",
-  "version-date": "2023-01-05",
+  "version": "1.0.26",
   "description": "eProsima Fast CDR is a C++ library that provides two serialization mechanisms. One is the standard CDR serialization mechanism, while the other is a faster implementation that modifies the standard.",
   "homepage": "https://github.com/eProsima/Fast-CDR",
   "dependencies": [

@@ -1,6 +1,6 @@
 {
   "name": "eprosima-rpc",
-  "version-date": "2022-05-23",
+  "version-date": "2023-02-25",
   "description": "eProsima library for RPC over DDS, TCP or REST",
   "homepage": "https://github.com/eProsima/RPC",
   "dependencies": [
