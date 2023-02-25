@@ -11,5 +11,5 @@ vcpkg_cmake_configure(
 )
 
 vcpkg_cmake_install()
-vcpkg_fixup_cmake_targets()
+vcpkg_cmake_config_fixup()
 
