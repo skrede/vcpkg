@@ -1,0 +1,8 @@
+{
+	"default": {
+		"foonathan-memory": { "baseline": "2023-02-14", "port-version": 0 },
+		"eprosima-fast-cdr": { "baseline": "2023-01-05", "port-version": 0 },
+		"eprosima-fast-dds": { "baseline": "2023-01-05", "port-version": 0 },
+		"eprosima-rpc": { "baseline": "2023-01-05", "port-version": 0 }
+	}
+}
