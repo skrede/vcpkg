@@ -1,3 +1,5 @@
+# based on https://github.com/microsoft/vcpkg/blob/master/ports/fastcdr/portfile.cmake
+
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
 	REPO eProsima/Fast-CDR
@@ -11,5 +13,18 @@ vcpkg_cmake_configure(
 )
 
 vcpkg_cmake_install()
-vcpkg_cmake_config_fixup()
+
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/eprosima-fast-cdr)
+
+vcpkg_copy_pdbs()
+
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include ${CURRENT_PACKAGES_DIR}/lib/eprosima-fast-cdr ${CURRENT_PACKAGES_DIR}/debug/lib/eprosima-fast-cdr)
+file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
+
+if(VCPKG_LIBRARY_LINKAGE STREQUAL "dynamic")
+    vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/include/eprosima-fast-cdr/eProsima_auto_link.h" "(defined(_DLL) || defined(_RTLDLL)) && defined(EPROSIMA_DYN_LINK)" "1")
+    vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/include/eprosima-fast-cdr/eprosima-fast-cdr_dll.h" "defined(eprosima-fast-cdr_DYN_LINK)" "1")
+endif()
+
+vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE")
 
