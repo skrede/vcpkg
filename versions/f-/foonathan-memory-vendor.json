@@ -2,9 +2,7 @@
 	"versions": [
 		{
 			"version": "1.3.0",
-			"git-tree": "4d474ab36872bde214f63d199e943491e82c0363",
-			"port-version": 0,
-			"path": "$/ports/foonathan-memory-vendor"
+			"path": "$/ports/foonathan-memory-vendor/1.3.0"
 		}
 	]
 }

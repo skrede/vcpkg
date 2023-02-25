@@ -2,9 +2,7 @@
 	"versions": [
 		{
 			"version": "2023-02-25",
-			"git-tree": "6c179b4200cc2a849b319e07e29a4982b4a4373a",
-			"port-version": 0,
-			"path": "$/ports/eprosima-rpc"
+			"path": "$/ports/eprosima-rpc/2023-02-25"
 		}
 	]
 }

@@ -2,9 +2,7 @@
 	"versions": [
 		{
 			"version": "1.0.26",
-			"git-tree": "439e3c63eec09503170e1320b899520ea745eb8d",
-			"port-version": 0,
-			"path": "$/ports/fast-cdr"
+			"path": "$/ports/fast-cdr/1.0.26"
 		}
 	]
 }
