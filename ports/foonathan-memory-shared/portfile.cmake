@@ -43,18 +43,6 @@ file(COPY "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan/memory/con
 #	"#ifndef NDEBUG //#if FOONATHAN_MEMORY_DEBUG_FILL"
 #)
 
-file(REMOVE_RECURSE
-	"${CURRENT_PACKAGES_DIR}/debug/include"
-	"${CURRENT_PACKAGES_DIR}/debug/share"
-	)
-
-file(REMOVE
-	"${CURRENT_PACKAGES_DIR}/debug/LICENSE"
-	"${CURRENT_PACKAGES_DIR}/debug/README.md"
-	"${CURRENT_PACKAGES_DIR}/LICENSE"
-	"${CURRENT_PACKAGES_DIR}/README.md"
-	)
-
 if(NOT VCPKG_CMAKE_SYSTEM_NAME OR
 	VCPKG_CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
 	set(EXECUTABLE_SUFFIX ".exe")
