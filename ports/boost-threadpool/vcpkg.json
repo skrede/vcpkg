@@ -1,0 +1,20 @@
+{
+  "name": "boost-threadpool",
+  "version": "0.2.5",
+  "description": "threadpool is a cross-platform C++ thread pool library and released under the Boost Software License. ",
+  "homepage": "https://github.com/philipphenkel/threadpool",
+  "dependencies": [
+    "boost-core",
+    "boost-smart-ptr",
+    "boost-function",
+    "boost-thread",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}

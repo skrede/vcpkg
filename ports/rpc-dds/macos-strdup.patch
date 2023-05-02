@@ -1,0 +1,13 @@
+diff --git a/include/utils/macros/strdup.h b/include/utils/macros/strdup.h
+index a11e4cc1..3d85f53a 100644
+--- a/include/utils/macros/strdup.h
++++ b/include/utils/macros/strdup.h
+@@ -6,6 +6,8 @@
+ #define STRDUP _strdup
+ #elif defined(__linux)
+ #define STRDUP strdup
++#elif defined(__APPLE__)
++#define STRDUP strdup
+ #endif
+ #endif // STRDUP
+ 
