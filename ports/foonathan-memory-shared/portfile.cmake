@@ -1,18 +1,12 @@
-# WINDOWS_EXPORT_ALL_SYMBOLS doesn't work.
-# unresolved external symbol "public: static unsigned int const foonathan::memory::detail::memory_block_stack::implementation_offset
-vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
-
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO foonathan/memory
-	REF 0.7-2
+	REF v0.7-2
 	SHA512 e84a567a832138f477997d7b4cbd827a82dfd5d9de8dc0d2833995366253501155663c7d73407ac43a7fd58d42774ddb3582c557ca12800316a732ac7ccab823
 	HEAD_REF master
 )
 
-vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS FEATURES
-	tool FOONATHAN_MEMORY_BUILD_TOOLS
-)
+vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS FEATURES tool FOONATHAN_MEMORY_BUILD_TOOLS)
 
 vcpkg_cmake_configure(
 	SOURCE_PATH "${SOURCE_PATH}"
@@ -35,25 +29,11 @@ vcpkg_copy_pdbs()
 
 # Place header files into the right folders
 # The original layout is not a problem for CMake-based project.
-file(COPY
-	"${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan"
-	DESTINATION "${CURRENT_PACKAGES_DIR}/include"
-	)
-file(GLOB
-	COMP_INCLUDE_FILES
-	"${CURRENT_PACKAGES_DIR}/include/foonathan_memory/comp/foonathan/*.hpp"
-	)
-file(COPY
-	${COMP_INCLUDE_FILES}
-	DESTINATION "${CURRENT_PACKAGES_DIR}/include/foonathan"
-	)
-file(COPY
-	"${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan/memory/config_impl.hpp"
-	DESTINATION "${CURRENT_PACKAGES_DIR}/include/foonathan/memory"
-	)
-file(REMOVE_RECURSE
-	"${CURRENT_PACKAGES_DIR}/include/foonathan_memory"
-	)
+file(COPY "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan" DESTINATION "${CURRENT_PACKAGES_DIR}/include")
+file(GLOB COMP_INCLUDE_FILES "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/comp/foonathan/*.hpp")
+file(COPY ${COMP_INCLUDE_FILES} DESTINATION "${CURRENT_PACKAGES_DIR}/include/foonathan")
+file(COPY "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan/memory/config_impl.hpp" DESTINATION "${CURRENT_PACKAGES_DIR}/include/foonathan/memory")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/include/foonathan_memory")
 
 # The Debug version of this lib is built with:
 # #define FOONATHAN_MEMORY_DEBUG_FILL 1

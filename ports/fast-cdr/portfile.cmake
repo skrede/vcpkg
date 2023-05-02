@@ -1,7 +1,3 @@
-# WINDOWS_EXPORT_ALL_SYMBOLS doesn't work.
-# unresolved external symbol "public: static unsigned int const foonathan::memory::detail::memory_block_stack::implementation_offset
-vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
-
 vcpkg_from_github(
 	OUT_SOURCE_PATH SOURCE_PATH
 	REPO eprosima/fastcdr
@@ -10,24 +6,12 @@ vcpkg_from_github(
 	HEAD_REF master
 )
 
-vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS FEATURES
-	tool FOONATHAN_MEMORY_BUILD_TOOLS
-)
-
 vcpkg_cmake_configure(
-	SOURCE_PATH "${SOURCE_PATH}"
-	OPTIONS
-	${FEATURE_OPTIONS}
-	-DFOONATHAN_MEMORY_BUILD_EXAMPLES=OFF
-	-DFOONATHAN_MEMORY_BUILD_TESTS=OFF
-	-DBUILD_SHARED_LIBS=ON
-)
-
-vcpkg_cmake_configure(SOURCE_PATH ${SOURCE_PATH})
+	SOURCE_PATH ${SOURCE_PATH})
 
 vcpkg_cmake_install()
 
-vcpkg_cmake_config_fixup(PACKAGE_NAME "fastcdr" CONFIG_PATH lib/cmake/fastcdr)
+vcpkg_cmake_config_fixup(PACKAGE_NAME fastcdr CONFIG_PATH lib/cmake/fastcdr)
 
 vcpkg_copy_pdbs()
 
