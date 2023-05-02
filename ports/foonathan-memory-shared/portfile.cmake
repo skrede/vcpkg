@@ -30,8 +30,6 @@ vcpkg_copy_pdbs()
 # Place header files into the right folders
 # The original layout is not a problem for CMake-based project.
 file(COPY "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan" DESTINATION "${CURRENT_PACKAGES_DIR}/include")
-file(GLOB COMP_INCLUDE_FILES "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/comp/foonathan/*.hpp")
-file(COPY ${COMP_INCLUDE_FILES} DESTINATION "${CURRENT_PACKAGES_DIR}/include/foonathan")
 file(COPY "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan/memory/config_impl.hpp" DESTINATION "${CURRENT_PACKAGES_DIR}/include/foonathan/memory")
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/include/foonathan_memory")
 
@@ -63,26 +61,6 @@ if(NOT VCPKG_CMAKE_SYSTEM_NAME OR
 	set(EXECUTABLE_SUFFIX ".exe")
 else()
 	set(EXECUTABLE_SUFFIX "")
-endif()
-
-if(EXISTS "${CURRENT_PACKAGES_DIR}/bin/nodesize_dbg${EXECUTABLE_SUFFIX}")
-	file(COPY
-		"${CURRENT_PACKAGES_DIR}/bin/nodesize_dbg${EXECUTABLE_SUFFIX}"
-		DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}"
-		)
-	vcpkg_copy_tool_dependencies("${CURRENT_PACKAGES_DIR}/tools/${PORT}")
-
-	if(VCPKG_LIBRARY_LINKAGE STREQUAL static)
-		file(REMOVE_RECURSE
-			"${CURRENT_PACKAGES_DIR}/bin"
-			"${CURRENT_PACKAGES_DIR}/debug/bin"
-			)
-	else()
-		file(REMOVE
-			"${CURRENT_PACKAGES_DIR}/bin/nodesize_dbg${EXECUTABLE_SUFFIX}"
-			"${CURRENT_PACKAGES_DIR}/debug/bin/nodesize_dbg${EXECUTABLE_SUFFIX}"
-			)
-	endif()
 endif()
 
 # Handle copyright
