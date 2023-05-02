@@ -1,13 +1,9 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO eProsima/Fast-DDS
-    REF v2.7.0
-    SHA512 289c94fb177209ffc80e93ae61822c83e7cb74ba7682f05a921c50ce048498bd811c19825d1fdb8af39b29a64904e96d87c5c59468139f0d8bb528549b80c94a
+    REF v2.10.1
+    SHA512 27873d512b3572663e680ab5edb5ed1f8c26bd5432d260d47f9db3d29c45a0b724690c6d080e978d6643f1003e79c6ec7ec06434c77b256697a37543e3e5d6b2
     HEAD_REF master
-    PATCHES
-        fix-find-package-asio.patch
-        disable-symlink.patch
-        fix-xtime.patch
 )
 
 vcpkg_cmake_configure(
@@ -21,13 +17,13 @@ vcpkg_cmake_config_fixup(PACKAGE_NAME "fastrtps" CONFIG_PATH share/fastrtps/cmak
 
 if(VCPKG_TARGET_IS_WINDOWS)
     # copy tools from "bin" to "tools" folder
-    foreach(TOOL "fast-discovery-server-1.0.0.exe" "fast-discovery-server.bat" "fastdds.bat" "ros-discovery.bat")
+    foreach(TOOL "fast-discovery-server-1.0.1.exe" "fast-discovery-server.bat" "fastdds.bat" "ros-discovery.bat")
         file(INSTALL "${CURRENT_PACKAGES_DIR}/bin/${TOOL}" DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}")
         file(REMOVE "${CURRENT_PACKAGES_DIR}/bin/${TOOL}")
     endforeach()
 
     # remove tools from debug builds
-    foreach(TOOL "fast-discovery-serverd-1.0.0.exe" "fast-discovery-server.bat" "fastdds.bat" "ros-discovery.bat")
+    foreach(TOOL "fast-discovery-serverd-1.0.1.exe" "fast-discovery-server.bat" "fastdds.bat" "ros-discovery.bat")
         if(EXISTS "${CURRENT_PACKAGES_DIR}/debug/bin/${TOOL}")
             file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/bin/${TOOL}")
         endif()
