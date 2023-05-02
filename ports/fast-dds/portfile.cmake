@@ -39,18 +39,18 @@ if(VCPKG_TARGET_IS_WINDOWS)
     vcpkg_copy_tool_dependencies("${CURRENT_PACKAGES_DIR}/tools/${PORT}")
 elseif(VCPKG_TARGET_IS_LINUX OR VCPKG_TARGET_IS_OSX)
     # copy tools from "bin" to "tools" folder
-    foreach(TOOL "fast-discovery-server-1.0.0" "fast-discovery-server" "fastdds" "ros-discovery")
+    foreach(TOOL "fast-discovery-server-1.0.1" "fast-discovery-server" "fastdds" "ros-discovery")
         file(INSTALL "${CURRENT_PACKAGES_DIR}/bin/${TOOL}" DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}")
         file(REMOVE "${CURRENT_PACKAGES_DIR}/bin/${TOOL}")
     endforeach()
 
     # replace symlink by a copy because symlinks do not work well together with vcpkg binary caching
     file(REMOVE "${CURRENT_PACKAGES_DIR}/tools/${PORT}/fast-discovery-server")
-    file(INSTALL "${CURRENT_PACKAGES_DIR}/tools/${PORT}/fast-discovery-server-1.0.0" DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}" RENAME "fast-discovery-server")
+    file(INSTALL "${CURRENT_PACKAGES_DIR}/tools/${PORT}/fast-discovery-server-1.0.1" DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}" RENAME "fast-discovery-server")
 
-    file(COPY "${CURRENT_PACKAGES_DIR}/debug/bin/fast-discovery-serverd-1.0.0" DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}")
+    file(COPY "${CURRENT_PACKAGES_DIR}/debug/bin/fast-discovery-serverd-1.0.1" DESTINATION "${CURRENT_PACKAGES_DIR}/tools/${PORT}")
     # remove tools from debug builds
-    foreach(TOOL "fast-discovery-serverd-1.0.0" "fast-discovery-server" "fastdds" "ros-discovery")
+    foreach(TOOL "fast-discovery-serverd-1.0.1" "fast-discovery-server" "fastdds" "ros-discovery")
         file(REMOVE "${CURRENT_PACKAGES_DIR}/debug/bin/${TOOL}")
     endforeach()
 
