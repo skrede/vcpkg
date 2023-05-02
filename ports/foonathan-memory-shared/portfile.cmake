@@ -31,7 +31,6 @@ vcpkg_copy_pdbs()
 # The original layout is not a problem for CMake-based project.
 file(COPY "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan" DESTINATION "${CURRENT_PACKAGES_DIR}/include")
 file(COPY "${CURRENT_PACKAGES_DIR}/include/foonathan_memory/foonathan/memory/config_impl.hpp" DESTINATION "${CURRENT_PACKAGES_DIR}/include/foonathan/memory")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/include/foonathan_memory")
 
 # The Debug version of this lib is built with:
 # #define FOONATHAN_MEMORY_DEBUG_FILL 1
@@ -43,6 +42,18 @@ file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/include/foonathan_memory")
 #	"#if FOONATHAN_MEMORY_DEBUG_FILL"
 #	"#ifndef NDEBUG //#if FOONATHAN_MEMORY_DEBUG_FILL"
 #)
+
+file(REMOVE_RECURSE
+	"${CURRENT_PACKAGES_DIR}/debug/include"
+	"${CURRENT_PACKAGES_DIR}/debug/share"
+	)
+
+file(REMOVE
+	"${CURRENT_PACKAGES_DIR}/debug/LICENSE"
+	"${CURRENT_PACKAGES_DIR}/debug/README.md"
+	"${CURRENT_PACKAGES_DIR}/LICENSE"
+	"${CURRENT_PACKAGES_DIR}/README.md"
+	)
 
 if(NOT VCPKG_CMAKE_SYSTEM_NAME OR
 	VCPKG_CMAKE_SYSTEM_NAME STREQUAL "WindowsStore")
