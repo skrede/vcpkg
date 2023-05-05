@@ -12,3 +12,342 @@ index 1497077..2b880cc 100644
  #include <vector>
  #include <string>
  
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+index 7b93c5e..80a7790 100644
+--- a/.idea/workspace.xml
++++ b/.idea/workspace.xml
+@@ -49,7 +49,10 @@
+     </configurations>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="128359cb-688a-4553-bf97-31be0d3c9827" name="Changes" comment="" />
++    <list default="true" id="128359cb-688a-4553-bf97-31be0d3c9827" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/include/fastdds/rtps/transport/TransportDescriptorInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fastdds/rtps/transport/TransportDescriptorInterface.h" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/include/fastrtps/types/TypeNamesGenerator.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/fastrtps/types/TypeNamesGenerator.h" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -59,6 +62,9 @@
+     <option name="formatViaClangd" value="false" />
+   </component>
+   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
+@@ -72,23 +78,23 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.cidr.known.project.marker": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "cf.first.check.clang-format": "false",
+-    "cidr.known.project.marker": "true",
+-    "last_opened_file_path": "/home/als/Workspace/Fast-DDS-2.10.1",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "CMakeSettings",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
++    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/home/als/Workspace/Fast-DDS-2.10.1&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="$PROJECT_DIR$" />
+@@ -235,11 +241,6 @@
+         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+-      <method v="2">
+-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+-      </method>
+-    </configuration>
+     <configuration name="fast-discovery-server" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="fastrtps" TARGET_NAME="fast-discovery-server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="fastrtps" RUN_TARGET_NAME="fast-discovery-server">
+       <method v="2">
+         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+diff --git a/cmake-build-debug/.ninja_deps b/cmake-build-debug/.ninja_deps
+index 7d2ebac..66a61ac 100644
+Binary files a/cmake-build-debug/.ninja_deps and b/cmake-build-debug/.ninja_deps differ
+diff --git a/cmake-build-debug/.ninja_log b/cmake-build-debug/.ninja_log
+index 6a0fce9..e3c39ed 100644
+--- a/cmake-build-debug/.ninja_log
++++ b/cmake-build-debug/.ninja_log
+@@ -435,3 +435,224 @@
+ 25934	28267	1683280557193388853	src/cpp/libfastrtps.so.2.10.1	4b97f67c240c75e5
+ 28267	28270	1683280557193388853	src/cpp/libfastrtps.so.2.10	66234fe292b20eee
+ 28267	28270	1683280557193388853	src/cpp/libfastrtps.so	66234fe292b20eee
++2	462	1683281452637245479	src/cpp/CMakeFiles/fastrtps.dir/rtps/common/Time_t.cpp.o	612d9b9a5458044
++2	574	1683281452750578463	src/cpp/CMakeFiles/fastrtps.dir/fastdds/log/OStreamConsumer.cpp.o	44a68de3b3a7b5f0
++2	637	1683281452813911602	src/cpp/CMakeFiles/fastrtps.dir/rtps/resources/TimedEventImpl.cpp.o	b31aa0f95700b822
++1	681	1683281452857244801	src/cpp/CMakeFiles/fastrtps.dir/rtps/resources/TimedEvent.cpp.o	f80bdbc81db842f
++2	745	1683281452920577940	src/cpp/CMakeFiles/fastrtps.dir/fastdds/log/StdoutConsumer.cpp.o	3b8a61929e623da3
++2	745	1683281452920577940	src/cpp/CMakeFiles/fastrtps.dir/fastdds/log/StdoutErrConsumer.cpp.o	5fa0c49d4f82f107
++1	796	1683281452970577787	src/cpp/CMakeFiles/fastrtps.dir/fastdds/log/FileConsumer.cpp.o	c4e2e44dea5fff5f
++3	1045	1683281453220577018	src/cpp/CMakeFiles/fastrtps.dir/rtps/history/CacheChangePool.cpp.o	295ba39c21af502f
++1	1050	1683281453227243664	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/DDSSQLFilter/DDSFilterField.cpp.o	142cb87fa3f4b32d
++3	1140	1683281453317243387	src/cpp/CMakeFiles/fastrtps.dir/rtps/history/History.cpp.o	e213063a4cc0926
++4	1154	1683281453330576679	src/cpp/CMakeFiles/fastrtps.dir/rtps/history/TopicPayloadPool.cpp.o	f492fc866e294339
++2	1287	1683281453460576280	src/cpp/CMakeFiles/fastrtps.dir/rtps/resources/ResourceEvent.cpp.o	4d3f11d7488fe326
++1	1307	1683281453483909540	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/DDSSQLFilter/DDSFilterExpression.cpp.o	a625126482df9a41
++3	1324	1683281453500576157	src/cpp/CMakeFiles/fastrtps.dir/rtps/history/TopicPayloadPoolRegistry.cpp.o	a15ea8b9bb3f952c
++1	1596	1683281453770575326	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/DDSSQLFilter/DDSFilterParameter.cpp.o	97a8925f8a7b8346
++745	2071	1683281454247240526	src/cpp/CMakeFiles/fastrtps.dir/rtps/messages/RTPSMessageCreator.cpp.o	e9b581b99584fd91
++3	2174	1683281454347240218	src/cpp/CMakeFiles/fastrtps.dir/rtps/network/ExternalLocatorsProcessor.cpp.o	18327e314906cf45
++2	2231	1683281454407240034	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/LivelinessManager.cpp.o	c3a30bb606a46aa6
++1050	2245	1683281454420573327	src/cpp/CMakeFiles/fastrtps.dir/rtps/messages/RTPSGapBuilder.cpp.o	8a10be26fce17b6a
++2	2246	1683281454420573327	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/LocatorSelectorSender.cpp.o	d4da770e55a8e55a
++4	2255	1683281454430573296	src/cpp/CMakeFiles/fastrtps.dir/rtps/history/ReaderHistory.cpp.o	e8c6c71c1ef8ff61
++4	2494	1683281454667239235	src/cpp/CMakeFiles/fastrtps.dir/rtps/history/WriterHistory.cpp.o	68c5130aafd8bda8
++1324	2614	1683281454790572189	src/cpp/CMakeFiles/fastrtps.dir/rtps/network/ReceiverResource.cpp.o	dc988a481c09a148
++1	2655	1683281454827238743	src/cpp/CMakeFiles/fastrtps.dir/fastdds/log/Log.cpp.o	3fbc744d6625d4b
++796	3413	1683281455587236405	src/cpp/CMakeFiles/fastrtps.dir/rtps/messages/SendBuffersManager.cpp.o	d20b7607212be6a
++1045	3958	1683281456133901390	src/cpp/CMakeFiles/fastrtps.dir/rtps/messages/RTPSMessageGroup.cpp.o	a4446ec9b30156eb
++1287	4040	1683281456213901143	src/cpp/CMakeFiles/fastrtps.dir/rtps/participant/RTPSParticipant.cpp.o	cd533a97e9dacdb1
++4	4277	1683281456450567083	src/cpp/CMakeFiles/fastrtps.dir/rtps/DataSharing/DataSharingListener.cpp.o	ee27519f1c2b64f1
++2	4444	1683281456617233237	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/ReaderProxy.cpp.o	4167c5ed6d49a8fb
++2255	4546	1683281456720566252	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/publisher/Publisher.cpp.o	59591af84d285529
++2231	4620	1683281456797232682	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/participant/Participant.cpp.o	7d44bfc062885ba2
++574	4624	1683281456797232682	src/cpp/CMakeFiles/fastrtps.dir/rtps/reader/WriterProxy.cpp.o	5b0e3809679418c6
++462	4674	1683281456843899206	src/cpp/CMakeFiles/fastrtps.dir/rtps/DataSharing/DataSharingNotification.cpp.o	d58c8d0ab7e20f85
++2655	4863	1683281457037231945	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/subscriber/Subscriber.cpp.o	a4eef2d4d6a93d1f
++3	5123	1683281457297231145	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/ReaderLocator.cpp.o	8d4c238de28f5c18
++1	5223	1683281457393897514	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/DDSSQLFilter/DDSFilterFactory.cpp.o	7908770a5741537a
++2494	5243	1683281457417230775	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/publisher/PublisherHistory.cpp.o	ea02b9e883059bf8
++1154	5252	1683281457423897422	src/cpp/CMakeFiles/fastrtps.dir/rtps/messages/MessageReceiver.cpp.o	11f0b5f98671871b
++3	5317	1683281457487230561	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/RTPSWriter.cpp.o	9d4f6e19d1d00ab7
++1307	5779	1683281457950562469	src/cpp/CMakeFiles/fastrtps.dir/rtps/network/NetworkFactory.cpp.o	f8be5f3e14bad4de
++745	5809	1683281457980562377	src/cpp/CMakeFiles/fastrtps.dir/rtps/reader/StatelessReader.cpp.o	1e7eed6ccfaaf728
++2071	5826	1683281457997228992	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/participant/ParticipantImpl.cpp.o	9ff4389af363a09b
++681	5928	1683281458100562008	src/cpp/CMakeFiles/fastrtps.dir/rtps/reader/StatefulReader.cpp.o	c26c259a9582f198
++2614	5938	1683281458110561977	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/subscriber/SubscriberImpl.cpp.o	cf3538d22647816f
++3	5945	1683281458117228622	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/StatelessWriter.cpp.o	d32d8fe593b6c9a6
++4	6440	1683281458607227115	src/cpp/CMakeFiles/fastrtps.dir/rtps/DataSharing/DataSharingPayloadPool.cpp.o	9e3161ec13b056bf
++4040	6454	1683281458627227055	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/TypeSupport.cpp.o	48f920385c7e286c
++637	6547	1683281458717226778	src/cpp/CMakeFiles/fastrtps.dir/rtps/reader/RTPSReader.cpp.o	2765ec558335b04a
++2246	6652	1683281458823893117	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/publisher/PublisherImpl.cpp.o	5e67ffd8bad53872
++2245	6885	1683281459053892409	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/Domain.cpp.o	b41ae63401027216
++1140	6894	1683281459063892378	src/cpp/CMakeFiles/fastrtps.dir/rtps/RTPSDomain.cpp.o	7a19b8d6cbf66763
++4624	6942	1683281459117225548	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/Topic.cpp.o	d7f8d0d438fdfd61
++4445	7034	1683281459207225271	src/cpp/CMakeFiles/fastrtps.dir/fastdds/publisher/DataWriterHistory.cpp.o	b7269188a639f83d
++3	7199	1683281459367224779	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/StatefulWriter.cpp.o	ed99315e0b8f1d91
++3414	7201	1683281459370558101	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/subscriber/SubscriberHistory.cpp.o	aea9701f3f89f6a
++4547	7241	1683281459417224625	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/ContentFilteredTopic.cpp.o	d8ceb3215d5b0b16
++5224	7261	1683281459437224563	src/cpp/CMakeFiles/fastrtps.dir/fastdds/publisher/qos/PublisherQos.cpp.o	624777bc6642cdec
++5124	7418	1683281459593890748	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/TopicProxyFactory.cpp.o	9d86657d95d54fbe
++2175	7434	1683281459603890718	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/PDP.cpp.o	3eb23232b82e3ea6
++4863	7453	1683281459627223979	src/cpp/CMakeFiles/fastrtps.dir/fastdds/publisher/qos/DataWriterQos.cpp.o	bcf7f8f3ce187af3
++5243	7530	1683281459703890410	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/qos/TopicQos.cpp.o	31a9170d9b3e7993
++4621	7538	1683281459710557056	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/ContentFilteredTopicImpl.cpp.o	2eb49ca4e34ab9aa
++4674	7589	1683281459760556902	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/TopicImpl.cpp.o	4a3cce3b61078ddb
++5252	7755	1683281459927223057	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/qos/DataReaderQos.cpp.o	66db5fa0ddb845f
++7201	7836	1683281460013889456	src/cpp/CMakeFiles/fastrtps.dir/fastdds/builtin/common/RPCHeadersImpl.cpp.o	eb089718476e19e0
++5930	8096	1683281460270555334	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/qos/SubscriberQos.cpp.o	7412593919ee8634
++1	8432	1683281460593887673	src/cpp/CMakeFiles/fastrtps.dir/fastdds/topic/DDSSQLFilter/DDSFilterExpressionParser.cpp.o	497719e0f62c777
++5827	8517	1683281460690554041	src/cpp/CMakeFiles/fastrtps.dir/fastdds/publisher/Publisher.cpp.o	886ac2a7beddfe0
++6547	8551	1683281460727220595	src/cpp/CMakeFiles/fastrtps.dir/fastdds/domain/qos/DomainParticipantFactoryQos.cpp.o	c8ce192952a56aeb
++7589	8708	1683281460883886781	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/shared_mem/SharedMemTransportDescriptor.cpp.o	decde2f19f96b9cf
++5946	8848	1683281461020553028	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/Subscriber.cpp.o	e613c9d7415ff7b1
++6454	8929	1683281461103886104	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/ReadCondition.cpp.o	6e4660a3d71f2833
++4277	9212	1683281461383885243	src/cpp/CMakeFiles/fastrtps.dir/fastdds/publisher/DataWriter.cpp.o	19af4a9a54affa11
++7453	9258	1683281461433885089	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/ChannelResource.cpp.o	6b3eb5bb38ff77c7
++1596	9361	1683281461527218136	src/cpp/CMakeFiles/fastrtps.dir/rtps/participant/RTPSParticipantImpl.cpp.o	985738e9ee2a0033
++6943	9504	1683281461677217675	src/cpp/CMakeFiles/fastrtps.dir/fastdds/domain/qos/DomainParticipantQos.cpp.o	b303b8f82a2b4aeb
++6441	9601	1683281461773884044	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/DataReader.cpp.o	1f8969414b7013ff
++8551	9861	1683281462037216567	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicTypeBuilder.cpp.o	70890b947792e7af
++6894	10011	1683281462183882783	src/cpp/CMakeFiles/fastrtps.dir/fastdds/domain/DomainParticipant.cpp.o	911f010f63ce4a5e
++7241	10135	1683281462307215737	src/cpp/CMakeFiles/fastrtps.dir/fastdds/builtin/typelookup/TypeLookupRequestListener.cpp.o	bb79665f78819f78
++7262	10147	1683281462320549030	src/cpp/CMakeFiles/fastrtps.dir/fastdds/builtin/typelookup/TypeLookupReplyListener.cpp.o	e898adbde798cf54
++7035	10215	1683281462387215491	src/cpp/CMakeFiles/fastrtps.dir/fastdds/builtin/typelookup/common/TypeLookupTypes.cpp.o	818b21d03d38a7e0
++7418	10287	1683281462460548599	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/UDPChannelResource.cpp.o	6e7de91b71c3fdfc
++9212	10342	1683281462517215091	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/tcp/TCPControlMessage.cpp.o	23f690d24a32824d
++5318	10440	1683281462610548138	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/SubscriberImpl.cpp.o	180d64138841673
++9602	10566	1683281462740547738	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/AnnotationParameterValue.cpp.o	d62eed6dba9c4712
++9504	10653	1683281462830547460	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/AnnotationDescriptor.cpp.o	d26844fe754ef6d4
++7199	10681	1683281462853880722	src/cpp/CMakeFiles/fastrtps.dir/fastdds/builtin/typelookup/TypeLookupManager.cpp.o	d1ff82a1939c132f
++9362	10751	1683281462927213830	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/ChainingTransport.cpp.o	6163fd0ca5a8ba45
++5810	10996	1683281463167213092	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/history/DataReaderHistory.cpp.o	c545426717aa5090
++10287	11010	1683281463183879707	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicTypePtr.cpp.o	48b5ecae13876dd2
++10342	11062	1683281463237212876	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicDataPtr.cpp.o	f006549e36a8b6d8
++10011	11082	1683281463257212815	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicDataFactory.cpp.o	53a7a71471110971
++10441	11213	1683281463387212416	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicTypeBuilderPtr.cpp.o	a588941b331bb104
++3958	11457	1683281463623878355	src/cpp/CMakeFiles/fastrtps.dir/fastdds/publisher/DataWriterImpl.cpp.o	86df97a9341b9f18
++10681	11604	1683281463780544539	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicTypeMember.cpp.o	6c3df6cf5608f37f
++10136	11648	1683281463820544416	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicType.cpp.o	af12d4c2ac69b71b
++11214	11792	1683281463967210632	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypeObjectHashId.cpp.o	68334b8f6f09f055
++5779	11881	1683281464050543708	src/cpp/CMakeFiles/fastrtps.dir/fastdds/publisher/PublisherImpl.cpp.o	6c33fda547420036
++10751	12079	1683281464253876417	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/MemberDescriptor.cpp.o	aed6d3233df3090
++8517	12141	1683281464313876233	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/test_UDPv4Transport.cpp.o	31fc792804eb2770
++10997	12167	1683281464343876140	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypeDescriptor.cpp.o	3a51545fa5234121
++11604	12198	1683281464373876048	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypesBase.cpp.o	1f8ffe2717bd1415
++7530	12210	1683281464383876017	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPChannelResource.cpp.o	9cb65226953df583
++6652	12291	1683281464460542448	src/cpp/CMakeFiles/fastrtps.dir/fastdds/domain/DomainParticipantFactory.cpp.o	6b8027083f68dc95
++11648	12485	1683281464660541833	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/condition/StatusConditionImpl.cpp.o	cfdd1f3a237e34f8
++10147	12493	1683281464667208480	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/BuiltinAnnotationsTypeObject.cpp.o	3d73cda8670718ac
++11010	12583	1683281464760541526	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypeIdentifier.cpp.o	ade0bfcf3829472
++8097	12639	1683281464807208048	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/UDPv4Transport.cpp.o	90ec8e281d9b1b8b
++10215	12743	1683281464917207711	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicPubSubType.cpp.o	c8c0e7e386143ed5
++11882	12756	1683281464930541003	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicDataHelper.cpp.o	5609dc42e3f99ee1
++10654	12814	1683281464990540818	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypeIdentifierTypes.cpp.o	18f0254e8f174e69
++8432	12832	1683281465003874110	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/UDPTransportInterface.cpp.o	94d56f439fc2f961
++7837	12955	1683281465127207065	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPAcceptorBasic.cpp.o	1bccd044667acaa6
++7756	12975	1683281465147207003	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPAcceptor.cpp.o	e791bbaa17eb6b2e
++7538	13017	1683281465187206879	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPChannelResourceBasic.cpp.o	e20b4a33b6cd362
++9861	13157	1683281465330539772	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicData.cpp.o	bc065fbfaa1f32d9
++8709	13166	1683281465340539742	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPv4Transport.cpp.o	1f569856cb10ccbc
++8848	13227	1683281465400539558	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/UDPv6Transport.cpp.o	29ffc30c76a81352
++5938	13252	1683281465420539496	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/DataReaderImpl.cpp.o	3f85aeec8b6cc7b2
++10567	13261	1683281465433872788	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicTypeBuilderFactory.cpp.o	10bc495548555733
++9258	13417	1683281465590538973	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/tcp/RTCPMessageManager.cpp.o	5ca4e7233dcbcc02
++11793	13435	1683281465610538912	src/cpp/CMakeFiles/fastrtps.dir/fastrtps_deprecated/attributes/TopicAttributes.cpp.o	6c751b0ab394f767
++8929	13459	1683281465633872172	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPv6Transport.cpp.o	c9cae94d0bffbba1
++11458	13495	1683281465670538727	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypeObjectFactory.cpp.o	9a7e8c5c29e3a6a2
++7434	13857	1683281466027204297	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPTransportInterface.cpp.o	cd8b1f414bb3447e
++11063	14859	1683281467030534544	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypeObject.cpp.o	b53ee10ecfb76b7d
++6886	15466	1683281467633866023	src/cpp/CMakeFiles/fastrtps.dir/fastdds/domain/DomainParticipantImpl.cpp.o	70c9a36b3b9f3889
++8	46	1683281562000242875	src/cpp/CMakeFiles/fastrtps.dir/rtps/flowcontrol/ThroughputControllerDescriptor.cpp.o	a8f262a22969a056
++6	874	1683281562826907003	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/condition/GuardCondition.cpp.o	e409a86c30ecdb07
++5	875	1683281562830240327	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/condition/Condition.cpp.o	1c9f28f49d468443
++875	894	1683281562850240265	src/cpp/CMakeFiles/fastrtps.dir/rtps/flowcontrol/FlowControllerConsts.cpp.o	3e29dc32e722e502
++6	916	1683281562870240204	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/condition/StatusCondition.cpp.o	930979243b687a01
++7	917	1683281562870240204	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/ServerAttributes.cpp.o	6c360686aa497a68
++6	917	1683281562870240204	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/policy/QosPolicyUtils.cpp.o	a6a291ec0048cd94
++6	1032	1683281562986906513	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/condition/WaitSet.cpp.o	57c7204ed74f3e3b
++6	1062	1683281563016906421	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/condition/ConditionNotifier.cpp.o	31322ca4fab905ad
++916	1153	1683281563106906144	src/cpp/CMakeFiles/fastrtps.dir/rtps/exceptions/Exception.cpp.o	ff24b14bec39e13a
++6	1207	1683281563160239314	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/condition/WaitSetImpl.cpp.o	9b2533d26d414fa3
++5	1295	1683281563246905714	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypeNamesGenerator.cpp.o	56dccf0fca2a76c2
++874	1369	1683281563323572146	src/cpp/CMakeFiles/fastrtps.dir/rtps/common/Token.cpp.o	7daa70250d258c20
++917	1518	1683281563473571686	src/cpp/CMakeFiles/fastrtps.dir/rtps/attributes/PropertyPolicy.cpp.o	65e40131739f84f0
++8	2059	1683281564013570029	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/liveliness/WLPListener.cpp.o	905ce9761a2cafcf
++5	2150	1683281564103569753	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/Entity.cpp.o	89e9ec56bb7db97
++6	2188	1683281564143569630	src/cpp/CMakeFiles/fastrtps.dir/fastdds/core/policy/ParameterList.cpp.o	b22f049217e63c5b
++5	2571	1683281564523568464	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/BuiltinAnnotationsTypeObject.cpp.o	3d73cda8670718ac
++6	2590	1683281564543568401	src/cpp/CMakeFiles/fastrtps.dir/fastdds/subscriber/qos/ReaderQos.cpp.o	d5a181744ecb0ada
++7	2637	1683281564590234925	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/DirectMessageSender.cpp.o	ad2b5ae274cd003b
++7	2657	1683281564610234864	src/cpp/CMakeFiles/fastrtps.dir/fastdds/publisher/qos/WriterQos.cpp.o	d698c1dc05432972
++7	2674	1683281564623568156	src/cpp/CMakeFiles/fastrtps.dir/fastdds/utils/QosConverters.cpp.o	61fe5294ccdae762
++7	2852	1683281564803567605	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/PDPListener.cpp.o	29bbfc6832576cf
++5	2965	1683281564916900589	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/TypeObjectFactory.cpp.o	9a7e8c5c29e3a6a2
++7	3236	1683281565190233085	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/endpoint/EDPSimpleListeners.cpp.o	13d7996fa2e61a6a
++8	3353	1683281565303566070	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/data/WriterProxyData.cpp.o	484d0fc2ad53c556
++5	3388	1683281565326899332	src/cpp/CMakeFiles/fastrtps.dir/dynamic-types/DynamicTypeBuilderFactory.cpp.o	10bc495548555733
++8	3492	1683281565443565641	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/data/ParticipantProxyData.cpp.o	8cfceb015da38d56
++8	3659	1683281565610231796	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/liveliness/WLP.cpp.o	869fd4ff898c31a5
++1033	3709	1683281565663564966	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/StatelessPersistentWriter.cpp.o	f12253df3d9c0f2d
++47	3727	1683281565676898258	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/data/ReaderProxyData.cpp.o	84d02bf9b85ff8b3
++1369	3800	1683281565753564688	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/database/backup/SharedBackupFunctions.cpp.o	d6005446b8c99872
++2571	3819	1683281565773564628	src/cpp/CMakeFiles/fastrtps.dir/rtps/persistence/PersistenceFactory.cpp.o	e96062417594512d
++8	3898	1683281565850231059	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/endpoint/EDPStatic.cpp.o	433d6fbd0ab395e7
++917	3937	1683281565890230936	src/cpp/CMakeFiles/fastrtps.dir/rtps/xmlparser/XMLEndpointParser.cpp.o	a842d54a6d2e12f3
++3800	4131	1683281566086897000	src/cpp/CMakeFiles/fastrtps.dir/utils/md5.cpp.o	946b083b7ec347dc
++3899	4137	1683281566093563645	src/cpp/CMakeFiles/fastrtps.dir/utils/StringMatching.cpp.o	f7640c38f79f2086
++1154	4189	1683281566140230168	src/cpp/CMakeFiles/fastrtps.dir/rtps/xmlparser/XMLDynamicParser.cpp.o	d143e209c7f205
++7	4249	1683281566200229985	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/PDPSimple.cpp.o	89b3d4d81c63812f
++4190	4408	1683281566363562817	src/cpp/CMakeFiles/fastrtps.dir/utils/TimedConditionVariable.cpp.o	f0988ffbb7542d5a
++4137	4470	1683281566423562633	src/cpp/CMakeFiles/fastrtps.dir/dds/core/types.cpp.o	ddf337b689fd3768
++2060	4479	1683281566433562602	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/StatefulPersistentWriter.cpp.o	a9fcf87bee9ed68
++8	4601	1683281566553562234	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/endpoint/EDPSimple.cpp.o	c8b2e83765c788d0
++3727	4694	1683281566646895281	src/cpp/CMakeFiles/fastrtps.dir/utils/IPFinder.cpp.o	64fe61890179a71c
++4408	4808	1683281566763561590	src/cpp/CMakeFiles/fastrtps.dir/dds/core/Exception.cpp.o	9151376fcdd99743
++8	4830	1683281566780228204	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/endpoint/EDP.cpp.o	ded51b7ace4a3158
++2188	4888	1683281566840228021	src/cpp/CMakeFiles/fastrtps.dir/rtps/reader/StatefulPersistentReader.cpp.o	8b28fec47cc08f49
++3937	4945	1683281566900227837	src/cpp/CMakeFiles/fastrtps.dir/utils/System.cpp.o	2131e10e733dc5d2
++2151	4948	1683281566900227837	src/cpp/CMakeFiles/fastrtps.dir/rtps/reader/StatelessPersistentReader.cpp.o	22d34797bf94b9da
++7	5037	1683281566986894237	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/BuiltinProtocols.cpp.o	9b0f579c51abce9a
++2965	5166	1683281567116893838	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/database/DiscoveryParticipantsAckStatus.cpp.o	da14420c1837e53b
++2637	5231	1683281567183560301	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/endpoint/EDPClient.cpp.o	ec2a7a640bbdf2e7
++2852	5579	1683281567523559257	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/database/DiscoveryParticipantInfo.cpp.o	8ab9c2d14fb0a1e2
++3236	5589	1683281567540225873	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/database/DiscoverySharedInfo.cpp.o	b2f73287fa8a60bf
++1518	5918	1683281567870224860	src/cpp/CMakeFiles/fastrtps.dir/rtps/writer/PersistentWriter.cpp.o	11cb8ce00f3e6e6
++894	5979	1683281567926891353	src/cpp/CMakeFiles/fastrtps.dir/rtps/flowcontrol/FlowControllerFactory.cpp.o	ed445aec2f8cd6e5
++4470	6416	1683281568370223326	src/cpp/CMakeFiles/fastrtps.dir/dds/topic/Topic.cpp.o	172be2dea59ba608
++3660	6435	1683281568390223265	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/timedevent/DSClientEvent.cpp.o	a1ad1ae23a224069
++1295	6508	1683281568456889727	src/cpp/CMakeFiles/fastrtps.dir/rtps/xmlparser/XMLProfileManager.cpp.o	856e38fce609ecbe
++1207	6655	1683281568603555942	src/cpp/CMakeFiles/fastrtps.dir/rtps/xmlparser/XMLParser.cpp.o	e515dbb960f1b05b
++4601	6831	1683281568786888714	src/cpp/CMakeFiles/fastrtps.dir/dds/pub/AnyDataWriter.cpp.o	b672aabc78cde512
++4694	7038	1683281568993554746	src/cpp/CMakeFiles/fastrtps.dir/dds/pub/DataWriter.cpp.o	ed9071b23858bf8a
++4249	7068	1683281569020221331	src/cpp/CMakeFiles/fastrtps.dir/dds/pub/Publisher.cpp.o	b27c9c553020b2c2
++2590	7175	1683281569130220994	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/endpoint/EDPServerListeners.cpp.o	c25cb274d3396056
++4947	7382	1683281569333553703	src/cpp/CMakeFiles/fastrtps.dir/statistics/fastdds/publisher/qos/DataWriterQos.cpp.o	7858daaa02440a19
++4830	7394	1683281569346886995	src/cpp/CMakeFiles/fastrtps.dir/dds/sub/DataReader.cpp.o	b881040ae188005f
++4948	7415	1683281569366886934	src/cpp/CMakeFiles/fastrtps.dir/statistics/fastdds/subscriber/qos/DataReaderQos.cpp.o	f291d1f80cc8972a
++5166	7533	1683281569486886565	src/cpp/CMakeFiles/fastrtps.dir/statistics/fastdds/domain/DomainParticipantStatisticsListener.cpp.o	8ab185b3f60fc186
++2658	7551	1683281569503553182	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/endpoint/EDPServer.cpp.o	27ac43d3cc459ead
++5232	7574	1683281569526886443	src/cpp/CMakeFiles/fastrtps.dir/statistics/rtps/writer/StatisticsWriterImpl.cpp.o	d535b890f23697f8
++6435	7708	1683281569660219367	src/cpp/CMakeFiles/fastrtps.dir/rtps/persistence/SQLite3PersistenceService.cpp.o	fa11aa51a0803ccf
++4480	7708	1683281569660219367	src/cpp/CMakeFiles/fastrtps.dir/dds/domain/DomainParticipant.cpp.o	d29281427999c6ad
++4889	7716	1683281569670219337	src/cpp/CMakeFiles/fastrtps.dir/statistics/fastdds/domain/DomainParticipant.cpp.o	5fa6dd62dd7b642b
++4809	7757	1683281569710219214	src/cpp/CMakeFiles/fastrtps.dir/dds/sub/Subscriber.cpp.o	8c1494b9b817777e
++3709	7802	1683281569756885738	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/timedevent/DServerEvent.cpp.o	9ef580f1f68603e7
++1062	7805	1683281569750219091	src/cpp/CMakeFiles/fastrtps.dir/rtps/xmlparser/XMLElementParser.cpp.o	e1f845d53fcaa178
++5580	7899	1683281569853552107	src/cpp/CMakeFiles/fastrtps.dir/statistics/rtps/reader/StatisticsReaderImpl.cpp.o	52762e32f893c464
++3492	7990	1683281569943551831	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/PDPServerListener.cpp.o	640f41be2b6b7477
++5589	8164	1683281570116884633	src/cpp/CMakeFiles/fastrtps.dir/statistics/rtps/StatisticsBase.cpp.o	484dac57bedcd082
++5979	8250	1683281570203551033	src/cpp/CMakeFiles/fastrtps.dir/statistics/types/typesPubSubTypes.cxx.o	f37404b5dfae06e8
++2674	8312	1683281570260217526	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/database/DiscoveryDataBase.cpp.o	1d276bef73e7f010
++3819	8986	1683281570933548793	src/cpp/CMakeFiles/fastrtps.dir/utils/IPLocator.cpp.o	97e5f8d726fecd4d
++3354	9495	1683281571443547228	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/PDPClient.cpp.o	fc303954f295a459
++4131	9537	1683281571483547105	src/cpp/CMakeFiles/fastrtps.dir/utils/SystemInfo.cpp.o	ac2bc8cf1e6850a7
++3388	9672	1683281571620213352	src/cpp/CMakeFiles/fastrtps.dir/rtps/builtin/discovery/participant/PDPServer.cpp.o	87d7659c01a87f09
++6656	10130	1683281572083545264	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPAcceptorSecure.cpp.o	5be4f65468e54f1a
++5037	10354	1683281572306877913	src/cpp/CMakeFiles/fastrtps.dir/statistics/fastdds/domain/DomainParticipantImpl.cpp.o	5b9b0fc38df9d0e1
++5919	10631	1683281572580210407	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/shared_mem/test_SharedMemTransport.cpp.o	6ad34119bec1af51
++6508	10918	1683281572866876194	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/TCPChannelResourceSecure.cpp.o	a7aeac1082eb9d19
++6416	11390	1683281573336874752	src/cpp/CMakeFiles/fastrtps.dir/rtps/transport/shared_mem/SharedMemTransport.cpp.o	94e2f1ef549da892
++11390	13759	1683281575686867542	src/cpp/libfastrtps.so.2.10.1	4b97f67c240c75e5
++13759	13762	1683281575686867542	src/cpp/libfastrtps.so.2.10	66234fe292b20eee
++13759	13762	1683281575686867542	src/cpp/libfastrtps.so	66234fe292b20eee
+diff --git a/cmake-build-debug/src/cpp/libfastrtps.so.2.10.1 b/cmake-build-debug/src/cpp/libfastrtps.so.2.10.1
+index 61619bd..dbbbd90 100755
+Binary files a/cmake-build-debug/src/cpp/libfastrtps.so.2.10.1 and b/cmake-build-debug/src/cpp/libfastrtps.so.2.10.1 differ
+diff --git a/include/fastdds/rtps/transport/TransportDescriptorInterface.h b/include/fastdds/rtps/transport/TransportDescriptorInterface.h
+index 1497077..2b880cc 100644
+--- a/include/fastdds/rtps/transport/TransportDescriptorInterface.h
++++ b/include/fastdds/rtps/transport/TransportDescriptorInterface.h
+@@ -17,9 +17,7 @@
+ 
+ #include <fastrtps/fastrtps_dll.h>
+ 
+-#ifdef _WIN32
+ #include <cstdint>
+-#endif // ifdef _WIN32
+ #include <vector>
+ #include <string>
+ 
+diff --git a/include/fastrtps/types/TypeNamesGenerator.h b/include/fastrtps/types/TypeNamesGenerator.h
+index a8f45e0..d492bfe 100644
+--- a/include/fastrtps/types/TypeNamesGenerator.h
++++ b/include/fastrtps/types/TypeNamesGenerator.h
+@@ -5,6 +5,7 @@
+ 
+ #include <string>
+ #include <vector>
++#include <cstdint>
+ 
+ namespace eprosima {
+ namespace fastrtps {
