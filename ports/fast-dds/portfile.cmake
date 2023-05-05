@@ -5,6 +5,7 @@ vcpkg_from_github(
     SHA512 27873d512b3572663e680ab5edb5ed1f8c26bd5432d260d47f9db3d29c45a0b724690c6d080e978d6643f1003e79c6ec7ec06434c77b256697a37543e3e5d6b2
     HEAD_REF master
     PATCHES
+        fix-uint32_t-does-not-name-type.patch
         fix-find-package-asio-and-xtime.patch
         disable-symlink.patch
 )
