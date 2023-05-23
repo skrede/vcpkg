@@ -3,7 +3,7 @@
 		"boost-threadpool": { "baseline": "0.2.5", "port-version": 0 },
 		"foonathan-memory-shared": { "baseline": "0.7.2", "port-version": 0 },
 		"fast-cdr": { "baseline": "1.0.27", "port-version": 0 },
-		"fast-dds": { "baseline": "2.10.1", "port-version": 0 },
+		"fast-dds": { "baseline": "2.11.0", "port-version": 0 },
 		"rpc-dds": { "baseline": "0.3.1", "port-version": 0 }
 	}
 }

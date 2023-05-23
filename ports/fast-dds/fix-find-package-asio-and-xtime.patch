@@ -1,13 +1,14 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index b01b2c4..f68ce90 100644
+index ff09ba34b..05be6a63b 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -42,6 +42,18 @@ message(STATUS "Version: ${PROJECT_VERSION}")
+@@ -42,6 +42,20 @@ message(STATUS "Version: ${PROJECT_VERSION}")
  ###############################################################################
  option(EPROSIMA_BUILD "Activate internal building" OFF)
  
++
 +###############################################################################
-+# Replace xtime with _timespec64. As a workround of the unreleased version of 
++# Replace xtime with _timespec64. As a workround of the unreleased version of
 +# MSVC, it will be deleted after release.
 +###############################################################################
 +if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
@@ -18,10 +19,11 @@ index b01b2c4..f68ce90 100644
 +    endif()
 +endif()
 +
++
  ###############################################################################
  # Warning level
  ###############################################################################
-@@ -233,7 +245,7 @@ if(NOT BUILD_SHARED_LIBS)
+@@ -233,7 +247,7 @@ if(NOT BUILD_SHARED_LIBS)
  endif()
  
  eprosima_find_package(fastcdr REQUIRED)

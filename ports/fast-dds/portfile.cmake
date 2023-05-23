@@ -1,11 +1,10 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO eProsima/Fast-DDS
-    REF v2.10.1
+    REF c00a854188b8be03501d1726ab2438af668b5297
     SHA512 27873d512b3572663e680ab5edb5ed1f8c26bd5432d260d47f9db3d29c45a0b724690c6d080e978d6643f1003e79c6ec7ec06434c77b256697a37543e3e5d6b2
-    HEAD_REF master
+    HEAD_REF 2.11.x
     PATCHES
-        fix-uint32_t-does-not-name-type.patch
         fix-find-package-asio-and-xtime.patch
         disable-symlink.patch
 )
